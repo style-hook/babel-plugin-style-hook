@@ -1,8 +1,11 @@
 {
   "name": "babel-plugin-style-hook",
   "version": "1.0.0",
-  "description": "babel plugin for style-hook to compress es6 string",
-  "main": "index.js",
+  "description": "babel plugin for style-hook to compress es6 tagged template",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/style-hook/babel-plugin-style-hook",
   "author": "coppy",
   "license": "MIT",
