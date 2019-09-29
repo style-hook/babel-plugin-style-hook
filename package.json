@@ -1,0 +1,25 @@
+{
+  "name": "babel-plugin-style-hook",
+  "version": "1.0.0",
+  "description": "babel plugin for style-hook to compress es6 string",
+  "main": "index.js",
+  "repository": "https://github.com/style-hook/babel-plugin-style-hook",
+  "author": "coppy",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch",
+    "coverage": "jest --coverage",
+    "prepublishOnly": "tsc -p ."
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.5.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  }
+}
