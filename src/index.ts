@@ -3,13 +3,20 @@ import minify from './minify'
 
 type Babel = typeof import('@babel/core')
 
+const apiName = [
+  'useStyle',
+  'useModuleStyle',
+  'useGlobalStyle',
+  'css',
+]
+
 export default function testPlugin(babel: Babel) {
   const t = babel.types
   return {
     visitor: {
       TaggedTemplateExpression(path) {
         const { tag, quasi } = path.node
-        if (t.isIdentifier(tag) && (tag as Identifier).name === 'useStyle') {
+        if (t.isIdentifier(tag) && apiName.includes(tag.name)) {
           const quasiPath = path.get('quasi')
           const { quasis, expressions } = quasi
           const sourceCode = quasis.map((templateEl, i) => (

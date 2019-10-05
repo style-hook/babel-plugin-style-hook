@@ -2,11 +2,26 @@ import * as babel from '@babel/core'
 import plugin from '../src/index'
 
 var example = `
-const c  = useStyle \`
+useStyle \`
   color: blue;
   font-size: 30px;
   .p {
     color: \${GREEN};
+  }
+  \${css \`
+    color: blue;
+  \`}
+\`
+useGlobalStyle \`
+  color: blue;
+  font-size: 30px;
+  .p {
+    color: green;
+  }
+\`
+useModuleStyle \`
+  .p {
+    color: red;
   }
 \`
 `

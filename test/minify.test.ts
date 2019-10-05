@@ -79,3 +79,14 @@ describe('remove semicolon', () => {
     expect(transformedCode).toBe('.p{color:red}color:red')
   })
 })
+
+describe('shorter number', () => {
+  test('0.xx', () => {
+    const code = minify('opacity:0.544')
+    expect(code).toBe('opacity:.544')
+  })
+  test('zero value', () => {
+    const code = minify('width:0px')
+    expect(code).toBe('width:0')
+  })
+})

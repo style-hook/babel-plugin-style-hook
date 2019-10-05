@@ -22,4 +22,8 @@ export default function (code: string) {
     .replace(/;;+/, ';')
     .replace(/;(?=\})/, '')
     .replace(/;$/, '')
+
+    // shorter number
+    .replace(/\b0\.(\d+)/, '.$1')
+    .replace(/\b0[a-zA-z]+/, '0')
 }
