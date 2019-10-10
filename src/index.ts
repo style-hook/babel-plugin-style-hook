@@ -26,7 +26,9 @@ export default function testPlugin(babel: Babel) {
           const minCode = minify(sourceCode)
           quasiPath.replaceWith(
             t.templateLiteral(
-              minCode.split(/\$\{\d+\}/).map(raw => t.templateElement({ raw })),
+              minCode.split(/\$\{\d+\}/).map(raw => (
+                t.templateElement({ raw, cooked: raw }, true)
+              )),
               expressions.filter((_, i) => minCode.indexOf(`\${${i}}`))
             )
           )
