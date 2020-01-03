@@ -1,6 +1,7 @@
 export default function (code: string) {
 
-  const SapceWith = (s: string) => RegExp(`\\s*\\${s}\\s*`, 'g')
+  const trimWith = (s: string) => RegExp(`\\s*\\${s}\\s*`, 'g')
+  const trimEndWith = (s: string) => RegExp(`\\${s}\\s+`, 'g')
   return code
     .trim()
 
@@ -8,15 +9,14 @@ export default function (code: string) {
     .replace(/\/\*.*?\*\//g, '')
 
     // remove unnecessary spaces
-    // should remove \n before other sapce process
-    .replace(SapceWith('\n'), ' ')
-    .replace(SapceWith(':'), ':')
-    .replace(SapceWith(';'), ';')
-    .replace(SapceWith(','), ',')
-    .replace(SapceWith('('), '(')
-    .replace(SapceWith(')'), ')')
-    .replace(SapceWith('{'), '{')
-    .replace(SapceWith('}'), '}')
+    .replace(/\s{2,}/g, ' ')
+    .replace(trimWith(':'), ':')
+    .replace(trimWith(';'), ';')
+    .replace(trimWith(','), ',')
+    .replace(trimEndWith('('), '(')
+    .replace(trimWith(')'), ')')
+    .replace(trimWith('{'), '{')
+    .replace(trimWith('}'), '}')
 
     // remove unnecessary semicolons
     .replace(/;;+/, ';')
