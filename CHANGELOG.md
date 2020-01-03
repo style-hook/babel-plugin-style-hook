@@ -1,3 +1,6 @@
+# 1.1.2
+fix: delete the sapce before `(` in @media
+
 # 1.1.1
 fix: can't work with @babel/plugin-transform-template-literals
 
