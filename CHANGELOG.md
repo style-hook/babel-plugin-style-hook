@@ -1,3 +1,6 @@
+# 1.1.3
+fix: Number of TemplateLiteral quasis should be exactly one more than the number of expressions.
+
 # 1.1.2
 fix: delete the sapce before `(` in @media
 

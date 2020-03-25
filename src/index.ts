@@ -10,7 +10,7 @@ const apiName = [
   'css',
 ]
 
-export default function testPlugin(babel: Babel) {
+export default function testPlugin(babel: Babel): babel.PluginObj {
   const t = babel.types
   return {
     visitor: {
@@ -29,11 +29,11 @@ export default function testPlugin(babel: Babel) {
               minCode.split(/\$\{\d+\}/).map(raw => (
                 t.templateElement({ raw, cooked: raw }, true)
               )),
-              expressions.filter((_, i) => minCode.indexOf(`\${${i}}`))
+              expressions.filter((_, i) => minCode.includes(`\${${i}}`))
             )
           )
         }
       }
     }
-  } as babel.PluginObj
+  }
 }
