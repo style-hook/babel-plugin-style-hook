@@ -19,17 +19,20 @@ export default function testPlugin(babel: Babel): babel.PluginObj {
         if (t.isIdentifier(tag) && apiName.includes(tag.name)) {
           const quasiPath = path.get('quasi')
           const { quasis, expressions } = quasi
-          const sourceCode = quasis.map((templateEl, i) => (
-            templateEl.value.raw
-            + (i !== quasis.length -1 ? `\${${i}}` : '')
+          let expressionSymbol = '@@'
+          while(quasis.map(tplEl => tplEl.value.raw).join(' ').includes(expressionSymbol))
+            expressionSymbol += '@'
+          const sourceCode = quasis.map((tplEl, i) => (
+            tplEl.value.raw
+            + (i !== quasis.length -1 ? `${expressionSymbol}${i}` : '')
           )).join('')
           const minCode = minify(sourceCode)
           quasiPath.replaceWith(
             t.templateLiteral(
-              minCode.split(/\$\{\d+\}/).map(raw => (
+              minCode.split(RegExp(`${expressionSymbol}\\d+`)).map(raw => (
                 t.templateElement({ raw, cooked: raw }, true)
               )),
-              expressions.filter((_, i) => minCode.includes(`\${${i}}`))
+              expressions.filter((_, i) => RegExp(`${expressionSymbol}${i}`).test(minCode))
             )
           )
         }

@@ -53,7 +53,7 @@ describe('remove sapces', () => {
     )
     `
     const transformedCode = minify(code)
-    expect(transformedCode).toBe('background:linear-gradient(180deg,rgb(51,163,244)0,rgba(51,163,244,0)100%)')
+    expect(transformedCode).toBe('background:linear-gradient(180deg,rgb(51,163,244) 0,rgba(51,163,244,0) 100%)')
   })
   test('dont delete the space before (', () => {
     const code = minify('@media   screen   and    ( max-width:480px )')

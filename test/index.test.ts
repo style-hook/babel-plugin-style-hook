@@ -22,6 +22,8 @@ useGlobalStyle \`
 useModuleStyle \`
   .p {
     color: red;
+    border: 1px \${Palette.BLUE}   dashed;
+    error-rule: @@@@1 red;
   }
 \`
 `

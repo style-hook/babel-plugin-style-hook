@@ -3,5 +3,5 @@
 exports[`works 1`] = `
 "useStyle\`color:blue;font-size:30px;.p{color:\${GREEN}}\${css\`color:blue\`}\`;
 useGlobalStyle\`color:blue;font-size:30px;.p{color:green}\`;
-useModuleStyle\`.p{color:red}\`;"
+useModuleStyle\`.p{color:red;border:1px \${Palette.BLUE} dashed;error-rule:@@@@1 red}\`;"
 `;

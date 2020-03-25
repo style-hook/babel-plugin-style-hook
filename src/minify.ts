@@ -1,6 +1,7 @@
 export default function (code: string) {
 
   const trimWith = (s: string) => RegExp(`\\s*\\${s}\\s*`, 'g')
+  const trimStartWith = (s: string) => RegExp(`\\s+\\${s}`, 'g')
   const trimEndWith = (s: string) => RegExp(`\\${s}\\s+`, 'g')
   return code
     .trim()
@@ -14,7 +15,7 @@ export default function (code: string) {
     .replace(trimWith(';'), ';')
     .replace(trimWith(','), ',')
     .replace(trimEndWith('('), '(')
-    .replace(trimWith(')'), ')')
+    .replace(trimStartWith(')'), ')')
     .replace(trimWith('{'), '{')
     .replace(trimWith('}'), '}')
 
