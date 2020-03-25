@@ -1,4 +1,3 @@
-import { Identifier } from '@babel/types'
 import minify from './minify'
 
 type Babel = typeof import('@babel/core')
@@ -19,9 +18,9 @@ export default function testPlugin(babel: Babel): babel.PluginObj {
         if (t.isIdentifier(tag) && apiName.includes(tag.name)) {
           const quasiPath = path.get('quasi')
           const { quasis, expressions } = quasi
-          let expressionSymbol = '@@'
+          let expressionSymbol = 'VAR'
           while(quasis.map(tplEl => tplEl.value.raw).join(' ').includes(expressionSymbol))
-            expressionSymbol += '@'
+            expressionSymbol += '_'
           const sourceCode = quasis.map((tplEl, i) => (
             tplEl.value.raw
             + (i !== quasis.length -1 ? `${expressionSymbol}${i}` : '')

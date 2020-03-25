@@ -23,12 +23,12 @@ useModuleStyle \`
   .p {
     color: red;
     border: 1px \${Palette.BLUE}   dashed;
-    error-rule: @@@@1 red;
+    disturb-rule: VAR0;
   }
 \`
 `
 
-test('works', () => {
+test('transform correctly', () => {
   const { code } = babel.transform(example, { plugins: [plugin] })
   expect(code).toMatchSnapshot()
 })

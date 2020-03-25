@@ -898,6 +898,21 @@ cross-spawn@^6.0.0, cross-spawn@^6.0.5:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+css-tree@1.0.0-alpha.39:
+  version "1.0.0-alpha.39"
+  resolved "https://registry.npm.taobao.org/css-tree/download/css-tree-1.0.0-alpha.39.tgz#2bff3ffe1bb3f776cf7eefd91ee5cba77a149eeb"
+  integrity sha1-K/8//huz93bPfu/ZHuXLp3oUnus=
+  dependencies:
+    mdn-data "2.0.6"
+    source-map "^0.6.1"
+
+csso@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npm.taobao.org/csso/download/csso-4.0.3.tgz?cache=0&sync_timestamp=1585052130344&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcsso%2Fdownload%2Fcsso-4.0.3.tgz#0d9985dc852c7cc2b2cacfbbe1079014d1a8e903"
+  integrity sha1-DZmF3IUsfMKyys+74QeQFNGo6QM=
+  dependencies:
+    css-tree "1.0.0-alpha.39"
+
 cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   version "0.3.8"
   resolved "https://registry.npmjs.org/cssom/-/cssom-0.3.8.tgz#9f1276f5b2b463f2114d3f2c75250af8c1a36f4a"
@@ -2501,6 +2516,11 @@ map-visit@^1.0.0:
   integrity sha1-7Nyo8TFE5mDxtb1B8S80edmN+48=
   dependencies:
     object-visit "^1.0.0"
+
+mdn-data@2.0.6:
+  version "2.0.6"
+  resolved "https://registry.npm.taobao.org/mdn-data/download/mdn-data-2.0.6.tgz#852dc60fcaa5daa2e8cf6c9189c440ed3e042978"
+  integrity sha1-hS3GD8ql2qLoz2yRicRA7T4EKXg=
 
 merge-stream@^2.0.0:
   version "2.0.0"
