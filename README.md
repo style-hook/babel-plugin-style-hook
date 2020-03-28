@@ -1,16 +1,14 @@
 # babel-plugin-style-hook
-a babel plugin to compress [style-hook](https://github.com/style-hook/style-hook) tagged template code.
+⚠️ the babel plugin is merged to style-hook [style-hook](https://github.com/style-hook/style-hook)
 
-[![Build Status](https://www.travis-ci.org/style-hook/babel-plugin-style-hook.svg?branch=master)](https://www.travis-ci.org/style-hook/babel-plugin-style-hook)
+Now you don't need to install it extra.
 
-# get started
-install with npm or yarn
-```
-yarn add -D babel-plugin-style-hook
-```
-Then add it to your babel configuration:
+In sure you had installed style-hook, then add it to your babel configuration:
+
 ```json
 {
-  "plugins": ["style-hook"]
+  "plugins": [
+    "style-hook/babel"
+  ]
 }
 ```
