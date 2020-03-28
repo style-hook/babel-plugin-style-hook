@@ -3,7 +3,7 @@
 
 Now you don't need to install it extra.
 
-In sure you had installed style-hook, then add it to your babel configuration:
+In sure you had installed style-hook *@^1.3.2*, then add it to your babel configuration:
 
 ```json
 {
